@@ -1,9 +1,10 @@
-# .db tools
+# DB table mapper tools
 
 Bash helpers to map a set of Magento database tables by LIKE pattern, walk
 their foreign-key closure, and dump schemas plus a relations diagram.
-All scripts run through **ddev** and must be invoked from the ddev project
-root. Target DB is whatever `ddev mysql` connects to (schema `db`, MariaDB).
+The scripts live in the repository root. All run through **ddev** and must be
+invoked from the ddev project root. Target DB is whatever `ddev mysql`
+connects to (schema `db`, MariaDB).
 
 ## Scripts
 
@@ -16,15 +17,15 @@ root. Target DB is whatever `ddev mysql` connects to (schema `db`, MariaDB).
 ## Typical usage
 
 ```bash
-./.db/dbMapper.sh -p 'cache'                    # full run: find + dump to ./schemas
-./.db/dbMapper.sh -p 'sales_order%' -m forward -s   # per-table files, forward FKs only
-./.db/dbMapper.sh -p 'customer_entity' -n      # only print the resolved table list
-./.db/dbMapper.sh -p 'cache' -d                 # include INSERT statements
+./dbMapper.sh -p 'cache'                    # full run: find + dump to ./schemas
+./dbMapper.sh -p 'sales_order%' -m forward -s   # per-table files, forward FKs only
+./dbMapper.sh -p 'customer_entity' -n      # only print the resolved table list
+./dbMapper.sh -p 'cache' -d                 # include INSERT statements
 
 # phases on their own
-./.db/dbFindTables.sh -p 'cache'                                  # just list
-./.db/dbFindTables.sh -p 'cache' | ./.db/dbDumpTables.sh -b cache # find → dump
-./.db/dbDumpTables.sh -f ./schemas/cache_*.tables.txt            # re-dump a saved list
+./dbFindTables.sh -p 'cache'                                  # just list
+./dbFindTables.sh -p 'cache' | ./dbDumpTables.sh -b cache     # find → dump
+./dbDumpTables.sh -f ./schemas/cache_*.tables.txt             # re-dump a saved list
 ```
 
 ## Options (dbMapper.sh)

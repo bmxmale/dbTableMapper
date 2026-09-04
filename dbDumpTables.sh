@@ -10,7 +10,7 @@
 # the ddev project root.
 #
 # Pairs with dbFindTables.sh:
-#   ./.db/dbFindTables.sh -p 'cache' | ./.db/dbDumpTables.sh -o ./schemas
+#   ./dbFindTables.sh -p 'cache' | ./dbDumpTables.sh -o ./schemas
 #
 set -euo pipefail
 
@@ -48,7 +48,7 @@ Output files (in -o DIR):
   <name>_<ts>.sql           the dump (single file), or a per-table directory
 
 Examples:
-  ./.db/dbFindTables.sh -p 'cache' | $0 -b cache
+  ./dbFindTables.sh -p 'cache' | $0 -b cache
   $0 -f ./schemas/cache_tables.txt -d
   $0 sales_order sales_order_grid -s
 EOF

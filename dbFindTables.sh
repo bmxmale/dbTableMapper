@@ -11,9 +11,9 @@
 # root.
 #
 # Usage:
-#   ./.db/dbFindTables.sh -p 'cache'
-#   ./.db/dbFindTables.sh -p 'sales_order%' -m forward
-#   ./.db/dbFindTables.sh -p 'customer_entity' > tables.txt
+#   ./dbFindTables.sh -p 'cache'
+#   ./dbFindTables.sh -p 'sales_order%' -m forward
+#   ./dbFindTables.sh -p 'customer_entity' > tables.txt
 #
 set -euo pipefail
 
@@ -45,7 +45,7 @@ Output: one table name per line on stdout; progress on stderr.
 Examples:
   $0 -p 'sales_order%'
   $0 -p 'cache' > tables.txt
-  $0 -p 'cache' | ./.db/dbDumpTables.sh -o ./schemas
+  $0 -p 'cache' | ./dbDumpTables.sh -o ./schemas
 EOF
 }
 

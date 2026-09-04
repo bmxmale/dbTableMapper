@@ -9,16 +9,16 @@
 # relations between them.
 #
 # The two phases are usable on their own, e.g.:
-#   ./.db/dbFindTables.sh -p 'cache'                 # just list tables
-#   ./.db/dbFindTables.sh -p 'cache' | ./.db/dbDumpTables.sh -b cache -o ./out
+#   ./dbFindTables.sh -p 'cache'                 # just list tables
+#   ./dbFindTables.sh -p 'cache' | ./dbDumpTables.sh -b cache -o ./out
 #
 # Runs through ddev: must be invoked from inside the ddev project root.
 #
 # Usage:
-#   ./.db/dbMapper.sh -p 'sales_order%'
-#   ./.db/dbMapper.sh -p 'customer_entity' -o ./schemas -d
-#   ./.db/dbMapper.sh -p 'catalog_product%' -m forward -s
-#   ./.db/dbMapper.sh -p 'sales_order%' -n   # preview the resolved set only
+#   ./dbMapper.sh -p 'sales_order%'
+#   ./dbMapper.sh -p 'customer_entity' -o ./schemas -d
+#   ./dbMapper.sh -p 'catalog_product%' -m forward -s
+#   ./dbMapper.sh -p 'sales_order%' -n   # preview the resolved set only
 #
 set -euo pipefail
 
